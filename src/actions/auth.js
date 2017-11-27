@@ -31,7 +31,8 @@ export const login = (username, password) => dispatch => {
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Basic ' + btoa(username + ":" + password)
             },
             body: JSON.stringify({
                 username,
@@ -42,7 +43,7 @@ export const login = (username, password) => dispatch => {
             // errors which follow a consistent format
             .then(res => {
                 console.log(res);
-                normalizeResponseErrors(res)
+                return normalizeResponseErrors(res)
             })
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
