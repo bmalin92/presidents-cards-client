@@ -39,7 +39,7 @@ const mapStateToProps = state => {
         name: currentUser
             ? `${currentUser.firstName} ${currentUser.lastName}`
             : '',
-        question: state.questions[0]
+        question: currentUser ? currentUser.questions[0] : null
     };
 };
 
