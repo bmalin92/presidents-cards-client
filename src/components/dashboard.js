@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {fetchProtectedData} from '../actions/protected-data';
+import AnswerForm from './answer-form'; 
+
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -25,6 +27,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-question">
                     Question: {this.props.question.question}
+                    <AnswerForm />
                 </div>
             </div>
         );

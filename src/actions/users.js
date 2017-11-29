@@ -25,3 +25,17 @@ export const registerUser = user => dispatch => {
             }
         });
 };
+
+export const questionSubmit = (answerInput, username) => dispatch => {
+    return fetch(`${API_BASE_URL}/users`, {
+        method: 'PUT', 
+        headers: {
+            'content-type': 'application/json'
+        }, 
+        body: JSON.stringify({answerInput, username})
+    })
+        .then(res => {
+            console.log("OUR ACTION RAN"); 
+        })
+
+}
