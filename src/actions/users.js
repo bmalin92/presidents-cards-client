@@ -34,7 +34,8 @@ export const questionSubmit = (answerInput, username) => dispatch => {
         },
         body: JSON.stringify({ answerInput, username })
     })
+        .then(res => res.json())
         .then(res => {
-            console.log("OUR ACTION RAN");
+            console.log('this is the response!', res);
         })
 }
