@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import {updateCurrentUser} from '../actions/users'; 
 import {fetchProtectedData} from '../actions/protected-data';
 import AnswerForm from './answer-form'; 
 
@@ -11,6 +12,10 @@ export class Dashboard extends React.Component {
             return;
         }
         this.props.dispatch(fetchProtectedData());
+    }
+
+    handleNextButton() {
+        this.props.dispatch(updateCurrentUser(this.state.username))
     }
 
     render() {
@@ -26,8 +31,9 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-question">
-                    Question: {this.props.question.question}
+                    Question: {this.props.question}
                     <AnswerForm />
+                    <button onClick={() => this.handleNextButton()}>Next</button>
                 </div>
             </div>
         );
@@ -42,7 +48,7 @@ const mapStateToProps = state => {
         name: currentUser
             ? `${currentUser.firstName} ${currentUser.lastName}`
             : '',
-        question: currentUser ? currentUser.questions[0] : null
+        question: currentUser ? currentUser.question : null, 
     };
 };
 

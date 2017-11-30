@@ -26,6 +26,20 @@ export const registerUser = user => dispatch => {
         });
 };
 
+export const updateCurrentUser = username => dispatch => {
+    // continue after lunch
+    return fetch(`${API_BASE_URL}/users/update`, {
+        method: 'POST', 
+        headers: {
+            'content-type': 'application/json'
+        }, 
+        body: JSON.stringify({username})
+        .then(res => {
+            
+        })
+    })
+}
+
 export const questionSubmit = (answerInput, username) => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
         method: 'PUT', 
@@ -34,8 +48,7 @@ export const questionSubmit = (answerInput, username) => dispatch => {
         }, 
         body: JSON.stringify({answerInput, username})
     })
-        .then(res => {
-            console.log("OUR ACTION RAN"); 
-        })
-
+    .then(res => {
+        console.log("OUR ACTION RAN"); 
+    })
 }
