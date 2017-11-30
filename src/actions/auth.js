@@ -17,6 +17,19 @@ export const setCurrentUser = currentUser => ({
     currentUser
 });
 
+export const getCurrentUser = username => dispatch => {
+    // continue after lunch
+    return fetch(`${API_BASE_URL}/users/${username}`, {
+        method: 'GET'
+    })
+        .then(res => {
+            return res.json()
+        })
+        .then(res => {
+            dispatch(setCurrentUser(res));
+        })
+}
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {

@@ -1,7 +1,7 @@
-import {SubmissionError} from 'redux-form';
+import { SubmissionError } from 'redux-form';
 
-import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './utils';
+import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utils';
 
 export const registerUser = user => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
@@ -14,7 +14,7 @@ export const registerUser = user => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .catch(err => {
-            const {reason, message, location} = err;
+            const { reason, message, location } = err;
             if (reason === 'ValidationError') {
                 // Convert ValidationErrors into SubmissionErrors for Redux Form
                 return Promise.reject(
@@ -26,29 +26,15 @@ export const registerUser = user => dispatch => {
         });
 };
 
-export const updateCurrentUser = username => dispatch => {
-    // continue after lunch
-    return fetch(`${API_BASE_URL}/users/update`, {
-        method: 'POST', 
-        headers: {
-            'content-type': 'application/json'
-        }, 
-        body: JSON.stringify({username})
-        .then(res => {
-            
-        })
-    })
-}
-
 export const questionSubmit = (answerInput, username) => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
-        method: 'PUT', 
+        method: 'PUT',
         headers: {
             'content-type': 'application/json'
-        }, 
-        body: JSON.stringify({answerInput, username})
+        },
+        body: JSON.stringify({ answerInput, username })
     })
-    .then(res => {
-        console.log("OUR ACTION RAN"); 
-    })
+        .then(res => {
+            console.log("OUR ACTION RAN");
+        })
 }

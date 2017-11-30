@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {updateCurrentUser} from '../actions/users'; 
+import {getCurrentUser} from '../actions/auth'; 
 import {fetchProtectedData} from '../actions/protected-data';
 import AnswerForm from './answer-form'; 
 
@@ -15,7 +15,8 @@ export class Dashboard extends React.Component {
     }
 
     handleNextButton() {
-        this.props.dispatch(updateCurrentUser(this.state.username))
+        console.log('username:', this.props.username);
+        this.props.dispatch(getCurrentUser(this.props.username))
     }
 
     render() {
