@@ -5,18 +5,8 @@ import { questionSubmit } from '../actions/users';
 export class AnswerForm extends React.Component {
     handleFormSubmit(event) {
         event.preventDefault(); 
-        this.props.dispatch(questionSubmit(this.answerInput.value, this.props.currentUsername )); 
-        console.log(this.props.currentUsername)
-        console.log(this.props.question.correct_answer); 
-        console.log(this.props.question.m);
-        console.log(this.props.questions[0].m) 
-        console.log(this.answerInput.value); 
-        console.log(this.props.currentUser); 
+        this.props.dispatch(questionSubmit(this.answerInput.value, this.props.currentUsername ));  
     }
-
-
-
-
 
     render() {
         return (
