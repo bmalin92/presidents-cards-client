@@ -21,10 +21,10 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <div className="dashboard-username">
+                {/* <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
+                <div className="dashboard-name">Name: {this.props.name}</div> */}
                 <div className="dashboard-question">
                     <h4>Question: {this.props.question}</h4>
                     <AnswerForm />

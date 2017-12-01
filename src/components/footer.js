@@ -15,7 +15,7 @@ export class Footer extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button className="button right" onClick={() => this.logOut()}>Log out</button>
+                <button className="button-logout right" onClick={() => this.logOut()}>Log out</button>
             );
         }
         return (
@@ -27,7 +27,8 @@ export class Footer extends React.Component {
 }
 
 export const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    currentUser: state.auth.currentUser ? state.auth.currentUser.username : null
 });
 
 export default connect(mapStateToProps)(Footer);

@@ -35,7 +35,7 @@ export class AnswerForm extends React.Component {
         else {
             form = 
             <form onSubmit={e => this.handleFormSubmit(e)}>
-                <input ref={input => this.answerInput = input}
+                <input className="input-answer" ref={input => this.answerInput = input}
                     placeholder="Your answer" />
                 <button id="button-answer" type="submit">Submit</button>
             </form>;
