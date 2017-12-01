@@ -19,7 +19,6 @@ export class AnswerForm extends React.Component {
     }
 
     handleNextButton() {
-        console.log('username:', this.props.username);
         this.setState({ submitted: false });
         this.props.dispatch(getCurrentUser(this.props.currentUsername))
     }
@@ -27,7 +26,6 @@ export class AnswerForm extends React.Component {
     render() {
         let nextButton;
         let form;
-        console.log("CURRENT USERNAME:", this.props.currentUsername)
         let message = <p>efhfkefh{this.props.message}</p>
         if (this.state.submitted) {
             nextButton = <button className="button-next" onClick={() => this.handleNextButton()}>Next</button>;
@@ -52,8 +50,6 @@ export class AnswerForm extends React.Component {
 }
 
 export const mapStateToProps = (state, props) => { 
-    console.log("COMPONENT STATE:" , state)
-    // const { currentUser } = state.auth;
     return {
         message: state.auth.message ? state.auth.message : null, 
         currentUsername: state.auth.currentUser ? state.auth.currentUser.username : null,

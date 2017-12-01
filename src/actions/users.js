@@ -27,11 +27,10 @@ export const registerUser = user => dispatch => {
 };
 
 
-
+export const DISPLAY_RESPONSE = "DISPLAY_RESPONSE"; 
 export const displayResponse = message => {
-    console.log("SECOND ACTION RAN", message.message)
     return {
-        type: 'DISPLAY_RESPONSE', 
+        type: DISPLAY_RESPONSE, 
         message: message.message
     }
 }
@@ -46,7 +45,6 @@ export const questionSubmit = (answerInput, username) => dispatch => {
     })
         .then(res => res.json())
         .then(res => {
-            console.log('this is the response!', res);
             dispatch(displayResponse(res))
         })
 }
