@@ -5,7 +5,8 @@ import {
 
 const initialState = {
     data: '',
-    error: null
+    error: null, 
+    message: null
 };
 
 export default function reducer(state = initialState, action) {

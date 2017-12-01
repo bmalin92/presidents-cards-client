@@ -24,18 +24,17 @@ export class AnswerForm extends React.Component {
     }
 
     render() {
-        let submitButton;
         let nextButton;
         let form;
         if (this.state.submitted) {
-            nextButton = <button onClick={() => this.handleNextButton()}>Next</button>;
+            nextButton = <button className="button-next" onClick={() => this.handleNextButton()}>Next</button>;
         }
         else {
             form = 
             <form onSubmit={e => this.handleFormSubmit(e)}>
                 <input ref={input => this.answerInput = input}
                     placeholder="Your answer" />
-                <button type="submit">Submit</button>
+                <button id="button-answer" type="submit">Submit</button>
             </form>;
         }
 
@@ -49,12 +48,21 @@ export class AnswerForm extends React.Component {
     }
 }
 
+
+
 const mapStateToProps = state => {
     const { currentUser } = state.auth;
     return {
+        // message: "Hello", 
         currentUsername: currentUser ? currentUser.username : null,
         question: currentUser ? currentUser.question : null
     }
 }
+
+// const mapStateToProps = (state, props) => ({ 
+//     message: state.message, 
+//     currentUsername: state.currentUser ? state.currentUser.username : null,
+//     question: state.currentUser ? state.currentUser.question : null
+// })
 
 export default connect(mapStateToProps)(AnswerForm); 

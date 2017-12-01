@@ -2,7 +2,8 @@ import {SET_AUTH_TOKEN, SET_CURRENT_USER} from '../actions/auth';
 
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
-    currentUser: null
+    currentUser: null, 
+    message: "HELLO THERE"
 };
 
 export default function reducer(state = initialState, action) {
@@ -14,6 +15,6 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             currentUser: action.currentUser
         });
-    }
+    } 
     return state;
 }
