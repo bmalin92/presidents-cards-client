@@ -14,7 +14,7 @@ How it Works
       <p>POTUS Facts keeps a custom set of trivia questions for each user. Create a user and sign in</p>
     </td>
     <td width = "40%">
-      <img src="/images/readme_image.png1" max-height="240px" width="auto">
+      <img src="/images/readme_image1.png" max-height="240px" width="auto">
     </td>
   </tr>
   <tr>
@@ -22,7 +22,7 @@ How it Works
       <p>The application will provide a question. Answer the question by filling in the input and clicking submit. The application will let you know if you got the question right or wrong. Click next to be given a new question.</p>
     </td>
     <td width = "40%">
-      <img src="/images/readme_image.png2" max-height="240px" width="auto">
+      <img src="/images/readme_image2.png" max-height="240px" width="auto">
     </td>
   </tr>
 </table>
