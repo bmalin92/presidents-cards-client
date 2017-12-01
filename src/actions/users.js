@@ -26,6 +26,8 @@ export const registerUser = user => dispatch => {
         });
 };
 
+
+
 export const displayResponse = message => {
     console.log("SECOND ACTION RAN", message.message)
     return {

@@ -17,6 +17,11 @@ export const setCurrentUser = currentUser => ({
     currentUser
 });
 
+export const CLEAR_MESSAGE = 'CLEAR_MESSAGE'; 
+export const clearMessage = () => ({
+    type: CLEAR_MESSAGE
+})
+
 export const getCurrentUser = username => dispatch => {
     // continue after lunch
     return fetch(`${API_BASE_URL}/users/${username}`, {
@@ -27,6 +32,7 @@ export const getCurrentUser = username => dispatch => {
         })
         .then(res => {
             dispatch(setCurrentUser(res));
+            dispatch(clearMessage()); 
         })
 }
 

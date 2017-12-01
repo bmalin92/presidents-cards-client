@@ -26,7 +26,7 @@ export class Footer extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 

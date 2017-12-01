@@ -63,6 +63,7 @@ input {
 
 .right {
   float: right; 
+  margin-top: 50px; 
 }
 
 .app {
@@ -71,6 +72,12 @@ input {
   padding: 80px 100px; 
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 5px;  
+}
+
+.app:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media screen and (max-width: 1000px) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { questionSubmit } from '../actions/users';
-import { getCurrentUser } from '../actions/auth';
+import { getCurrentUser, clearMessage } from '../actions/auth';
 
 export class AnswerForm extends React.Component {
     constructor(props) {
@@ -10,6 +10,7 @@ export class AnswerForm extends React.Component {
             submitted: false
         }
     }
+
     handleFormSubmit(event) {
         event.preventDefault();
         this.setState({ submitted: true });
@@ -26,6 +27,8 @@ export class AnswerForm extends React.Component {
     render() {
         let nextButton;
         let form;
+        console.log("CURRENT USERNAME:", this.props.currentUsername)
+        let message = <p>efhfkefh{this.props.message}</p>
         if (this.state.submitted) {
             nextButton = <button className="button-next" onClick={() => this.handleNextButton()}>Next</button>;
         }
@@ -38,9 +41,9 @@ export class AnswerForm extends React.Component {
             </form>;
         }
 
-
         return (
             <div>
+                <p>{this.props.message}</p>
                 {form}
                 {nextButton}
             </div>
@@ -48,21 +51,14 @@ export class AnswerForm extends React.Component {
     }
 }
 
-
-
-const mapStateToProps = state => {
-    const { currentUser } = state.auth;
+export const mapStateToProps = (state, props) => { 
+    console.log("COMPONENT STATE:" , state)
+    // const { currentUser } = state.auth;
     return {
-        // message: "Hello", 
-        currentUsername: currentUser ? currentUser.username : null,
-        question: currentUser ? currentUser.question : null
+        message: state.auth.message ? state.auth.message : null, 
+        currentUsername: state.auth.currentUser ? state.auth.currentUser.username : null,
+        question: state.auth.currentUser ? state.auth.currentUser.question : null
     }
 }
-
-// const mapStateToProps = (state, props) => ({ 
-//     message: state.message, 
-//     currentUsername: state.currentUser ? state.currentUser.username : null,
-//     question: state.currentUser ? state.currentUser.question : null
-// })
 
 export default connect(mapStateToProps)(AnswerForm); 
