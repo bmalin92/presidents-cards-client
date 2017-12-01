@@ -1,6 +1,6 @@
 
 <h1 align="center">POTUS Facts</h1>
-<p><em>This document provides general information on the POTUS Facts client-side application.  For more information about the POTUS Facts API, please see <a href="hhttps://github.com/jackseabolt/president-cards-server">SolarSystemGuide-BackendAPI</a>.</em></p>
+<p><em>This document provides general information on the POTUS Facts client-side application.  For more information about the POTUS Facts API, please see <a href="hhttps://github.com/jackseabolt/president-cards-server">president-cards-server</a>.</em></p>
 
 Why POTUS Facts
 -------------
