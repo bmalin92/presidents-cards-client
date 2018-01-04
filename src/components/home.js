@@ -11,7 +11,7 @@ export function Home(props) {
     return (
         <div className="home">
             <img className="picture" src="./images/home.jpg" />
-            <p className="center" >POTUS Facts is a spaced-repitition application for testing your
+            <p className="center" >xxx POTUS Facts is a spaced-repitition application for testing your
                 presidential trivia knowledge! Think you are a US history whiz? 
                 Sign up today and find out!
             </p>
