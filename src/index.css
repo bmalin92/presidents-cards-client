@@ -16,8 +16,22 @@ h1 {
   font-size: 40px;  
 }
 
+a {
+  color: rgb(65, 65, 65); 
+  text-decoration: none; 
+}
+
 h1, h2, h3 {
   font-family: 'Oswald', sans-serif;
+}
+
+p {
+  line-height: 150%; 
+  color: rgb(36, 36, 36); 
+}
+
+.center {
+  text-align: center; 
 }
 
 .error {
@@ -51,6 +65,10 @@ input {
 
 .input-normal {
   width: 100%; 
+}
+
+.button-container {
+  margin-top: 50px; 
 }
 
 #button-answer {
@@ -88,6 +106,14 @@ input {
   margin-left: 0px; 
   margin-bottom: 20px; 
 }
+.button:hover {
+  background-color: rgb(78, 78, 104);
+  cursor: pointer; 
+}
+
+#button-login {
+  margin-left: 5px;  
+}
 
 .button-logout {
   background-color: rgb(168, 55, 55); 
@@ -98,6 +124,15 @@ input {
   font-size: 12px; 
   margin-left: 0px; 
   margin-bottom: 20px; 
+}
+
+.block {
+  display: block; 
+  padding-bottom: 10px; 
+}
+
+.picture {
+  width: 100%; 
 }
 
 .right {
