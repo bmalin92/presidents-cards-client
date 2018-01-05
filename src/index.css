@@ -115,17 +115,6 @@ input {
   margin-left: 5px;  
 }
 
-.button-logout {
-  background-color: rgb(168, 55, 55); 
-  padding: 8px 20px; 
-  color: white; 
-  border: 0px; 
-  border-radius: 5px; 
-  font-size: 12px; 
-  margin-left: 0px; 
-  margin-bottom: 20px; 
-}
-
 .block {
   display: block; 
   padding-bottom: 10px; 
