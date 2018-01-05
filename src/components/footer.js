@@ -15,7 +15,7 @@ export class Footer extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button className="button-logout right" onClick={() => this.logOut()}>Log out</button>
+                <p className="right cursor" onClick={() => this.logOut()}>Log out</p>
             );
         }
         return (

@@ -3,10 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: black; 
-  /* background: url(images/flag.jpg) no-repeat center fixed; 
-  -webkit-background-size: cover; 
-  -o-background-size: cover; 
-  -moz-background-size: cover;  */
 }
 
 h1 {
@@ -32,6 +28,10 @@ p {
 
 .center {
   text-align: center; 
+}
+
+.cursor:hover {
+  cursor: pointer; 
 }
 
 .error {
