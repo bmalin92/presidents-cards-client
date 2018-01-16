@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
 export function Home(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -12,9 +12,14 @@ export function Home(props) {
         <div className="home">
             <img className="picture" src="./images/home.jpg" />
             <p className="center">POTUS Facts is a spaced-repitition application for testing your
-                presidential trivia knowledge! Think you are a US history whiz? 
+                presidential trivia knowledge! Think you are a US history whiz?
                 Sign up today and find out!
             </p>
+            <p className='center'>Test the app with the following credentials:</p>
+            <ul className='testAccount'>
+                <li>Username: test</li>
+                <li>Password: password123</li>
+            </ul>
             <div className="center button-container">
                 <Link className="button" to="/register">Register</Link>
                 <Link id="button-login" className="button" to="/login">Login</Link>

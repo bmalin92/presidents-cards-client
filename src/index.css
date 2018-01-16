@@ -143,6 +143,13 @@ input {
   clear: both;
 }
 
+.testAccount {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
 /* STYLES FOR BACKGROUND */
 
 * { box-sizing: border-box; }
