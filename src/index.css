@@ -203,9 +203,10 @@ input {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .app {
-    padding: 80px 70px; 
-    width: 90%; 
+    padding: 80px 50px; 
+    width: 90%;  
+    margin: 25px auto;
   }
 }
