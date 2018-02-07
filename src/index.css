@@ -203,7 +203,7 @@ input {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .app {
     padding: 80px 50px; 
     width: 90%;  
