@@ -112,6 +112,7 @@ input {
   margin-left: 0px; 
   margin-bottom: 20px; 
   transition: 0.3s; 
+  font-size: 14px; 
 }
 .button:hover {
   background-color: rgb(78, 78, 104);
