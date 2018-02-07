@@ -20,7 +20,23 @@ export const setCurrentUser = currentUser => ({
 export const CLEAR_MESSAGE = 'CLEAR_MESSAGE'; 
 export const clearMessage = () => ({
     type: CLEAR_MESSAGE
-})
+}); 
+
+export const AUTH_REQUEST = 'AUTH_REQUEST';
+export const authRequest = () => ({
+    type: AUTH_REQUEST
+});
+
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const authSuccess = () => ({
+    type: AUTH_SUCCESS
+});
+
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const authError = error => ({
+    type: AUTH_ERROR,
+    error
+});
 
 export const getCurrentUser = username => dispatch => {
     // continue after lunch
@@ -41,11 +57,13 @@ export const getCurrentUser = username => dispatch => {
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
+    dispatch(authSuccess());
     dispatch(setCurrentUser(decodedToken.user));
     saveAuthToken(authToken);
 };
 
 export const login = (username, password) => dispatch => {
+    dispatch(authRequest());
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
@@ -67,6 +85,7 @@ export const login = (username, password) => dispatch => {
             .catch(err => {
                 const {code} = err;
                 if (code === 401) {
+                    dispatch(authError(err));
                     // Could not authenticate, so return a SubmissionError for Redux
                     // Form
                     return Promise.reject(

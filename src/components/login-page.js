@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-
+import { PulseLoader } from 'react-spinners'; 
 import LoginForm from './login-form';
 
 export function LandingPage(props) {
@@ -14,6 +14,8 @@ export function LandingPage(props) {
         <div className="home">
             <h2>Login</h2>
             <LoginForm />
+            <PulseLoader color={'#d0d7e2'} loading={props.loading} className="loading-graphic" />
+            <br />
             <Link className="block link" to="/register">Register</Link>
             <Link className="block link" to="/">Main</Link>
         </div>
@@ -21,7 +23,8 @@ export function LandingPage(props) {
 }
 
 export const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null, 
+    loading: state.auth.loading
 });
 
 export default connect(mapStateToProps)(LandingPage);
