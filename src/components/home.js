@@ -15,6 +15,7 @@ export function Home(props) {
                 presidential trivia knowledge! Think you are a US history whiz?
                 Sign up today and find out!
             </p>
+            <br />
             <p className='center'>Test the app with the following credentials:</p>
             <ul className='testAccount'>
                 <li>Username: test</li>

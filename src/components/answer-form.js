@@ -26,7 +26,7 @@ export class AnswerForm extends React.Component {
     render() {
         let nextButton;
         let form;
-        let message = <p>efhfkefh{this.props.message}</p>
+        let message = <p>{this.props.message}</p>
         if (this.state.submitted) {
             nextButton = <button className="button-next" onClick={() => this.handleNextButton()}>Next</button>;
         }
