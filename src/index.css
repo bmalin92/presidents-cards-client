@@ -130,6 +130,8 @@ input {
 
 .picture {
   width: 100%; 
+  border: 7px solid rgb(255, 255, 255); 
+  border-radius: 5px; 
 }
 
 .right {
